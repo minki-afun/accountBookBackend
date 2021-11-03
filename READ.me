@@ -1,0 +1,56 @@
+prisma, graphql, apollo(server/client), react-native(Expo), node.js, mysql
+
+styled-components, without semicolon(;)
+
+==============================================================
+
+DB
+
+//Users
+
+id, email(unique), password(unique)
+
+//contents
+
+id, product, price, text, sign(Boolean), date(Int), createdAt, updatedAt
+(no save)total, minusTotal, plusTotal
+
+==============================================================
+
+//main
+contents => product, price, sign, date, total, minusTotal, plusTotal
+
+//detail
+contents => product, price, text, sign(Boolean), date(Int)
+
+//Solt by Montly
+
+    1020 // 100  10
+
+    0920   09
+
+=============================================================
+
+Create Update Delete
+
+=============================================================
+//Front
+
+Components => contentDetail.js
+Screens => main.js, Users.js
+App.js
+
+
+=============================================================
+//Back
+
+src
+   graphql
+    users => usersTypeDefs.js, usersResolvers.js
+    contents => contentsTypeDefs.js, contentsResolvers.js
+    graphqlUtills.js
+    client.js
+    graphqlSchema.js
+
+server.js
+prisma => Schema.prisma
