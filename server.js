@@ -13,7 +13,7 @@ import { getUser } from "./src/graphql/graphqlUtils"
 const PORT = process.env.PORT || 3000
 
 // 아폴로 서버
-const apollo = new ApolloServer({
+export const apollo = new ApolloServer({
   resolvers,
   typeDefs,
   context: async (ctx) => {
