@@ -3,27 +3,23 @@ import client from "../client"
 export default {
   Query: {
     seeContents: async(_,{id}) => {
-      const contentsList = await client.content.findMany({
+      return client.content.findUnique({
         where:{
           id,
         }
       })
-      if(!contentsList) {
-        return {
-          result: false,
-          error: "거래 내역이 없습니다"
-        }
-      }
-      return{
-        result: true,
-        error: null
-      }
+      
     }
   },
   Content: {
-    total: ({ id }) => {
-      console.log(id)
-
+    total: async({id}, _, { loggedInUser }) => {
+      const contents = await client.content.findMany({
+        where: {
+          id
+        }
+      })
+      console.log(contents)
+      return 1
     }
   }
 }

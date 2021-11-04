@@ -2,7 +2,7 @@ import {gql} from 'apollo-server'
 
 export default gql`
   type Query{
-    seeContents(id:Int!, email:String!): MutationResponse!
+    seeContents(id:Int!): Content!
   }
   type Content {
     id: Int!
