@@ -7,8 +7,9 @@ export default gql`
       product: String!
       price: Int!
       text: String
-      date: Int
-      
+      date: Int!
+      sign: Boolean
+      userId: Int
     ): MutationResponse!
   }
 `
