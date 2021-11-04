@@ -19,5 +19,11 @@ export default {
         error: null
       }
     }
+  },
+  Content: {
+    total: ({ id }) => {
+      console.log(id)
+
+    }
   }
 }

@@ -12,16 +12,4 @@ export default gql`
         createdAt: String!
         updatedAt: String!
     }
-    type Content {
-        id: Int!
-        product: String!
-        price: Int!
-        text: String
-        sign: Boolean!
-        date: Int!
-        user: [User]
-        userId: Int!
-        createdAt: String!
-        updatedAt: String!
-    }
 `

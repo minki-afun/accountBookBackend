@@ -15,5 +15,8 @@ export default gql`
     userId: Int!
     createdAt: String!
     updatedAt: String!
+    total: Int!
+    minusTotal: Int!
+    plusTotal: Int!
   }
 `
