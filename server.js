@@ -35,6 +35,7 @@ const app = express()
 
 // 로그 상태 창
 app.use(logger("tiny"))
+
 // 아폴로와 app 미들웨어 세팅
 apollo.applyMiddleware({ app })
 
