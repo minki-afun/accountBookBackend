@@ -1,8 +1,9 @@
-import {gql} from 'apollo-server'
+import { gql } from "apollo-server"
 
 export default gql`
-  type Query{
-    seeContents(id:Int!): Content!
+  type Query {
+    seeContents(id: Int!): Content!
+    seeBalance(userId: Int!): Content!
   }
   type Content {
     id: Int!

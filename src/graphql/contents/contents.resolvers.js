@@ -10,6 +10,13 @@ export default {
         },
       })
     },
+    seeBalance: async (_, { userId }) => {
+      return client.content.findFirst({
+        where: {
+          userId: userId,
+        },
+      })
+    },
   },
   Content: {
     // 총합

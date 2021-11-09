@@ -10,7 +10,7 @@ import { typeDefs, resolvers } from "./src/graphql/schema"
 import { getUser } from "./src/graphql/graphqlUtils"
 
 // 포트 설정
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 4000
 
 // 아폴로 서버
 export const apollo = new ApolloServer({
@@ -22,12 +22,14 @@ export const apollo = new ApolloServer({
         loggedInUser: await getUser(ctx.req.headers.token),
       }
     } else {
-      const { connection: { context }} = ctx;
+      const {
+        connection: { context },
+      } = ctx
       return {
         loggedInUser: context.loggedInUser,
       }
     }
-  }
+  },
 })
 
 // 익스프레스 세팅
@@ -46,5 +48,7 @@ const httpServer = http.createServer(app)
 // 포트 listen
 httpServer.listen(PORT, () => {
   console.log(`🚀 Server is running on http://localhost:${PORT} 🚀`)
-  console.log(`🚀 GraphQL PlayGround is running on http://localhost:${PORT}/graphql 🚀`)
+  console.log(
+    `🚀 GraphQL PlayGround is running on http://localhost:${PORT}/graphql 🚀`
+  )
 })
