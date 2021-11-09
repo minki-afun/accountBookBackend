@@ -2,7 +2,7 @@ import { gql } from "apollo-server"
 
 export default gql`
   type Query {
-    seeContents(id: Int!): Content!
+    seeContents(userId: Int!): [Content!]
     seeBalance(userId: Int!): Content!
   }
   type Content {

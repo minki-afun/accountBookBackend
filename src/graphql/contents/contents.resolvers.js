@@ -3,10 +3,10 @@ import client from "../client"
 export default {
   Query: {
     // Content 보기
-    seeContents: async (_, { id }) => {
-      return client.content.findUnique({
+    seeContents: (_, { userId }) => {
+      return client.content.findMany({
         where: {
-          id,
+          userId,
         },
       })
     },
