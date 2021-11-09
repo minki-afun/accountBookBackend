@@ -17,5 +17,13 @@ export default {
         error: "로그인 하세요.",
       }
     },
+
+    userData: async (_, { id }, { loggedInUser }) => {
+      return client.user.findUnique({
+        where: {
+          id,
+        },
+      })
+    },
   },
 }
