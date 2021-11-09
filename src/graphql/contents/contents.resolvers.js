@@ -5,17 +5,14 @@ export default {
     // Content 보기
     seeContents: async (_, { userId }) => {
       try {
-        
         return client.content.findMany({
           where: {
             userId,
-
           },
         })
       } catch (error) {
         console.log(error)
       }
-      
     },
     seeBalance: async (_, { userId }) => {
       return client.content.findFirst({
