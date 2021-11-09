@@ -10,7 +10,7 @@ import { typeDefs, resolvers } from "./src/graphql/schema"
 import { getUser } from "./src/graphql/graphqlUtils"
 
 // 포트 설정
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 4000
 
 // 아폴로 서버
 export const apollo = new ApolloServer({
