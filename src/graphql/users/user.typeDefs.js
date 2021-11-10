@@ -10,6 +10,7 @@ export default gql`
   type Query {
     isLogin: isLoginResult!
     userData(id: Int!): User!
+    checkIdExist(email: String!): MutationResponse
   }
   type User {
     id: Int!

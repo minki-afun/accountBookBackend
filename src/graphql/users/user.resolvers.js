@@ -25,5 +25,24 @@ export default {
         },
       })
     },
+
+    checkIdExist: async (_, { email }) => {
+      const UserExist = await client.user.findUnique({
+        where: {
+          email,
+        },
+      })
+      if (UserExist) {
+        return {
+          result: false,
+          error: "이메일이 존재합니다",
+        }
+      }
+
+      return {
+        result: true,
+        error: "사용 가능합니다",
+      }
+    },
   },
 }
