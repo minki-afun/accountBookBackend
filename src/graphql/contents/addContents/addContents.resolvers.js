@@ -4,7 +4,7 @@ import { protect } from "../../graphqlUtils"
 export default {
   Mutation: {
     addContents: protect(
-      async (_, { product, price, text, date }, { loggedInUser }) => {
+      async (_, { product, price, text, date, sign }, { loggedInUser }) => {
         try {
           if (product !== "" && price !== 0 && date !== 0) {
             const checkBeforeAdd = await client.content.create({
@@ -13,7 +13,7 @@ export default {
                 price,
                 text,
                 date,
-                sign: true,
+                sign,
                 userId: loggedInUser.id,
               },
             })
